@@ -1,0 +1,63 @@
+# SPDX-License-Identifier: Apache-2.0
+# 出预编 iOS 壳（pack/shell_build.sh），跑在 GitHub 托管的 Xcode 27 镜像上：没有自备 Mac 时用它出壳。
+#   配方与维护者在 gate-host 上出壳完全一致（同一个入口脚本）：make ios → 拷 gal_helpers → ship_ext 封壳 + 闭包核查。
+#   壳编号 = 输入指纹 + 直连链号 + iOS 下限 + SDK 主版本（pack/shell/manifest.py），不绑机器：同提交、同 SDK 大版本出的壳同号，
+#   拿回本机后启动器按 manifest.json 逐文件核 SHA-256 再用。本工作流只出壳、不打游戏包。
+#   放置位置：fork 的 .github/workflows/build-shell.yml（经网页端放入；编程接口推不了工作流文件）。
+name: build-shell
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  shell:
+    # tools/toolchain.env 钉 IPHONEOS_SDK_MAJOR=27，pack/shell_build.sh 出壳时核实际 iOS SDK 主版本、对不上报红：
+    #   macos-26 镜像只有 Xcode 26 / iOS 26 SDK，过不了这关。所以不用 macos-* 标签，直接用按 Xcode 大版本分的 xcode-27 镜像
+    #   （GA 2026-10-15，macOS 27 + Xcode 27.x，arm64）。标准规格 3 核 M1 / 7 GB，冷出壳慢；要提速改 xcode-27-xlarge（付费大规格）。
+    runs-on: xcode-27
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # 出壳要核「输入表里的文件无未提交改动」并取 HEAD 提交号：全量检出，与公开仓 CI 的 macos 作业同口径
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-dotnet@v6
+        with:
+          # make ios 带 S2A_CS=1 编服务层：.NET 版本单一来源与公开仓 CI 同一份 global.json（SDK 10.0.403）
+          global-json-file: compat/tree/global.json
+      - name: bash 5 与 GNU Make 4
+        # 出壳脚本经 tools/gmake.sh 找 PATH 里的 gmake ≥ 4（系统 make 3.81 的 -j 会卡死）；与公开仓 CI 同样 brew 装 bash
+        run: |
+          brew install bash make
+          echo "$(brew --prefix)/bin" >> "$GITHUB_PATH"
+      - name: 选 Xcode 27（S2A_DEVELOPER_DIR 是 tools/toolchain.sh 的第一优先选择）
+        run: |
+          XC=$(ls -d /Applications/Xcode_27*.app /Applications/Xcode-27*.app 2>/dev/null | sort -V | tail -n 1)
+          [ -n "$XC" ] || { echo "【红】镜像里找不到 Xcode 27"; ls /Applications; exit 1; }
+          echo "S2A_DEVELOPER_DIR=$XC/Contents/Developer" >> "$GITHUB_ENV"
+          DEVELOPER_DIR="$XC/Contents/Developer" xcrun --sdk iphoneos --show-sdk-version
+      - name: Metal 工具链缺失时补下载
+        # Xcode 26 起 Metal 编译器是可下载组件，toolchain.sh 出壳前会严格核（退出码 + 版本行 + 无 error 文本）；托管镜像未必预装，先补
+        run: |
+          export DEVELOPER_DIR="$S2A_DEVELOPER_DIR"
+          OUT=$(xcrun -sdk iphoneos metal --version 2>/dev/null || true)
+          case "$OUT" in
+            *"Apple metal version "*) echo "$OUT" ;;
+            *) xcodebuild -downloadComponent MetalToolchain ;;
+          esac
+      - name: 出壳（仓库自己的入口）
+        # 产物落在 $RUNNER_TEMP/s2arm-shell（脚本拒绝覆盖已存在目录，故用每次全新的临时区）：root/（壳本体）+ manifest.json（壳清单）
+        run: bash pack/shell_build.sh "$RUNNER_TEMP/s2arm-shell"
+      - name: 上传壳
+        uses: actions/upload-artifact@v4
+        with:
+          name: s2arm-shell-${{ github.sha }}
+          path: ${{ runner.temp }}/s2arm-shell
+          if-no-files-found: error
