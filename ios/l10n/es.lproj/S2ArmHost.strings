@@ -196,6 +196,8 @@
 "vpad.layout.problem.visibility" = "El ajuste de opacidad en reposo está dañado; se usa temporalmente el 25 %. Ajústalo de nuevo para corregir; el registro original se conserva.";
 "vpad.layout.touch" = "Solo táctil";
 "vpad.layout.touch.note" = "Oculta los botones en pantalla";
+"vpad.layout.gesture" = "Controles gestuales";
+"vpad.layout.gesture.note" = "Sin botones en pantalla; zonas de arrastre y toque";
 "vpad.layouts.buttons.note" = "Muestra los botones en pantalla";
 "vpad.layouts.copyName" = "Copia de %@";
 "vpad.layouts.edit" = "Editar botones (posición, tamaño, opacidad, color)";
@@ -223,6 +225,7 @@
 "vpad.layouts.stickFixed.note" = "Los sticks permanecen en pantalla; arrástralos en Editar botones. Desactivado = el stick se centra donde tocas. Solo para este juego.";
 "vpad.layouts.title" = "Diseño táctil";
 "vpad.layouts.touch.note" = "Para juegos con controles táctiles propios. Los botones en pantalla se ocultan; mantén cuatro dedos 1,5 s para volver.";
+"vpad.layouts.gesture.note" = "Sin botones en pantalla: arrastra para mover los sticks y toca las zonas para los botones. Mantén cuatro dedos 1,5 s para volver.";
 "vpad.menu.editDisabled" = "No hay botones para editar en modo solo táctil";
 "vpad.menu.face.auto" = "Botones: Automático";
 "vpad.menu.face.auto.note" = "Sigue las letras de tu mando: diseño Switch en mandos Nintendo, diseño Xbox en mandos Xbox";

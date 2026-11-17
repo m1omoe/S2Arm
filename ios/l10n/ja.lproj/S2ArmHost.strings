@@ -196,6 +196,8 @@
 "vpad.layout.problem.visibility" = "アイドル時の不透明度設定が壊れています。現在は 25% を使用しています。再設定することで修正できます。元のデータは保持されます。";
 "vpad.layout.touch" = "タッチのみ";
 "vpad.layout.touch.note" = "画面上のボタンを非表示にします";
+"vpad.layout.gesture" = "ジェスチャー操作";
+"vpad.layout.gesture.note" = "ボタンを表示せず、ドラッグとタップ領域で操作";
 "vpad.layouts.buttons.note" = "画面上のボタンを表示します";
 "vpad.layouts.copyName" = "%@ コピー";
 "vpad.layouts.edit" = "ボタンを編集（位置、サイズ、不透明度、カラー）";
@@ -223,6 +225,7 @@
 "vpad.layouts.stickFixed.note" = "スティックを常時表示し、「ボタンを編集」でドラッグして配置できます。オフにすると指を置いた位置が中心になります。このゲームのみ有効。";
 "vpad.layouts.title" = "タッチレイアウト";
 "vpad.layouts.touch.note" = "ゲーム独自のタッチ操作を使う場合に有効にします。画面上のボタンがオフになり、4本指で1.5秒長押しすると元に戻ります。";
+"vpad.layouts.gesture.note" = "ボタンを表示しません。ドラッグでスティック、タップ領域でボタンを操作します。4 本指を 1.5 秒長押しすると切り替えられます";
 "vpad.menu.editDisabled" = "タッチ専用モードでは編集できるボタンがありません";
 "vpad.menu.face.auto" = "ボタン：自動";
 "vpad.menu.face.auto.note" = "コントローラーのボタンに印字された文字に従います。任天堂コントローラーはSwitchレイアウト、XboxコントローラーはXboxレイアウトを使用します。";

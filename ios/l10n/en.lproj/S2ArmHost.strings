@@ -197,6 +197,8 @@
 "vpad.layout.problem.visibility" = "Idle opacity setting is corrupted; temporarily using 25%. Adjust it again to fix; the original record is kept.";
 "vpad.layout.touch" = "Touch only";
 "vpad.layout.touch.note" = "Hides the on-screen buttons";
+"vpad.layout.gesture" = "Gesture controls";
+"vpad.layout.gesture.note" = "No on-screen buttons; drag and tap zones instead";
 "vpad.layouts.buttons.note" = "Shows the on-screen buttons";
 "vpad.layouts.copyName" = "%@ Copy";
 "vpad.layouts.edit" = "Edit buttons (position, size, opacity, color)";
@@ -224,6 +226,7 @@
 "vpad.layouts.stickFixed.note" = "Sticks stay on screen; drag them into place in Edit buttons. Off = the stick centers where your finger lands. This game only.";
 "vpad.layouts.title" = "Touch layout";
 "vpad.layouts.touch.note" = "For games with their own touch controls. The on-screen buttons turn off; hold four fingers for 1.5 s to switch back.";
+"vpad.layouts.gesture.note" = "No on-screen buttons: drag to push the sticks, tap zones for buttons. Hold four fingers for 1.5 s to switch back.";
 "vpad.menu.editDisabled" = "No buttons to edit in touch-only mode";
 "vpad.menu.face.auto" = "Buttons: Automatic";
 "vpad.menu.face.auto.note" = "Follows the letters on your controller: Switch layout on Nintendo controllers, Xbox layout on Xbox controllers";

@@ -197,6 +197,8 @@
 "vpad.layout.problem.visibility" = "闲置透明度设置损坏，暂用 25%；重新调整可修复，原记录保留";
 "vpad.layout.touch" = "仅触屏操作";
 "vpad.layout.touch.note" = "不显示虚拟按键";
+"vpad.layout.gesture" = "手势触控";
+"vpad.layout.gesture.note" = "不显示虚拟按键，滑动和点按分区操作";
 "vpad.layouts.buttons.note" = "显示虚拟按键";
 "vpad.layouts.copyName" = "%@ 副本";
 "vpad.layouts.edit" = "编辑按键（位置、大小、透明度、配色）";
@@ -224,6 +226,7 @@
 "vpad.layouts.stickFixed.note" = "摇杆常驻屏幕，位置在「编辑按键」里拖；关掉是手指落点当中心。只对这款游戏生效";
 "vpad.layouts.title" = "触屏布局";
 "vpad.layouts.touch.note" = "游戏自己的触屏操作用这项；虚拟按键会关掉，四指长按 1.5 秒可切回";
+"vpad.layouts.gesture.note" = "不显示虚拟按键：左右滑动推摇杆，点按屏幕分区出按键；四指长按 1.5 秒可切回";
 "vpad.menu.editDisabled" = "仅触屏操作时没有按键可编辑";
 "vpad.menu.face.auto" = "手柄按键：自动";
 "vpad.menu.face.auto.note" = "按手柄键帽上印的字母：任天堂手柄用 Switch 布局，Xbox 手柄用 Xbox 布局";

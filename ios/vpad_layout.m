@@ -6,6 +6,8 @@ NSString *const S2AVPadLayoutDefaultIdentifier = @"default";
 NSString *const S2AVPadLayoutMineIdentifier = @"mine";
 // 纯触屏：没有虚拟按键，也就没有可编辑的几何，因此不落文件、只记在选择记录里。
 NSString *const S2AVPadLayoutTouchIdentifier = @"touch";
+// 手势触控：同样没有虚拟按键、没有可编辑的几何（分区在 vpad.m 里写死），不落文件、只记在选择记录里。
+NSString *const S2AVPadLayoutGestureIdentifier = @"gesture";
 NSString *const S2AVPadLayout2DIdentifier = @"2d";
 
 CGFloat S2AVPadKeyOpacity(CGFloat idle, BOOL active) {
@@ -100,7 +102,7 @@ static CGRect normalized_rect(NSDictionary *value) {
     return layout;
 }
 + (BOOL)isBuiltinIdentifier:(NSString *)identifier {
-    return [identifier isEqualToString:S2AVPadLayoutDefaultIdentifier] || [identifier isEqualToString:S2AVPadLayoutTouchIdentifier] || [identifier isEqualToString:S2AVPadLayout2DIdentifier];
+    return [identifier isEqualToString:S2AVPadLayoutDefaultIdentifier] || [identifier isEqualToString:S2AVPadLayoutTouchIdentifier] || [identifier isEqualToString:S2AVPadLayout2DIdentifier] || [identifier isEqualToString:S2AVPadLayoutGestureIdentifier];
 }
 - (NSString *)displayName {
     if ([_identifier isEqualToString:S2AVPadLayoutDefaultIdentifier]) return S2AL(@"vpad.layout.default");

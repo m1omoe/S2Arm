@@ -167,6 +167,8 @@
 "vpad.layout.problem.visibility" = "閒置透明度設定已損毀，暫時使用 25%；重新調整即可修復，原紀錄會保留";
 "vpad.layout.touch" = "僅觸控操作";
 "vpad.layout.touch.note" = "不顯示虛擬按鍵";
+"vpad.layout.gesture" = "手勢觸控";
+"vpad.layout.gesture.note" = "不顯示虛擬按鍵，滑動和點按分區操作";
 "vpad.layouts.buttons.note" = "顯示虛擬按鍵";
 "vpad.layouts.copyName" = "%@ 副本";
 "vpad.layouts.edit" = "編輯按鍵（位置、大小、透明度、配色）";
@@ -194,6 +196,7 @@
 "vpad.layouts.stickFixed.note" = "搖桿常駐在螢幕上，位置可在「編輯按鍵」裡拖動；關閉時以手指按下的位置為中心。只對這款遊戲生效";
 "vpad.layouts.title" = "觸控配置";
 "vpad.layouts.touch.note" = "遊戲本身用觸控操作時選這項；虛擬按鍵會關閉，四指長按 1.5 秒可切換回來";
+"vpad.layouts.gesture.note" = "不顯示虛擬按鍵：左右滑動推搖桿，點按螢幕分區出按鍵；四指長按 1.5 秒可切回";
 "vpad.menu.editDisabled" = "僅觸控操作時沒有按鍵可編輯";
 "vpad.menu.face.auto" = "手把按鍵：自動";
 "vpad.menu.face.auto.note" = "依手把鍵帽上印的字母：任天堂手把用 Switch 配置，Xbox 手把用 Xbox 配置";

@@ -7,6 +7,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 所有手指直接写进 Hid.Touchscreen（游戏自带的触屏 UI），两者在列表里并列。
 extern NSString *const S2AVPadLayoutDefaultIdentifier;
 extern NSString *const S2AVPadLayoutTouchIdentifier;
+// "gesture"（手势触控）：同样不画任何虚拟按键，但手指不进 Hid.Touchscreen——滑动推摇杆、点按屏幕分区出按键，只发 Hid.Npads。
+//   分区与判定在 vpad.m，没有可编辑的几何，同样不落文件、只记在选择记录里
+extern NSString *const S2AVPadLayoutGestureIdentifier;
 // "2d"（#268，11-09 维护者定稿 cmdr/assets/268_vpad_2d_对比_1109.png）：横版 / 像素游戏用。十字键放大到左拇指落点、可按斜角，ABXY 放大，
 //   没有摇杆和 L3 / R3（左半屏不再抢触点）；同 default 按安全区现算，不对应磁盘文件
 extern NSString *const S2AVPadLayout2DIdentifier;

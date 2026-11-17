@@ -196,6 +196,8 @@
 "vpad.layout.problem.visibility" = "Le réglage de l'opacité inactive est corrompu ; une opacité de 25 pour cent est utilisée temporairement. Réglez à nouveau pour corriger ; l'enregistrement original est conservé.";
 "vpad.layout.touch" = "Tactile uniquement";
 "vpad.layout.touch.note" = "Masque les boutons à l'écran";
+"vpad.layout.gesture" = "Commandes gestuelles";
+"vpad.layout.gesture.note" = "Aucun bouton à l'écran ; zones de glissement et de toucher";
 "vpad.layouts.buttons.note" = "Affiche les boutons à l'écran";
 "vpad.layouts.copyName" = "%@ Copie";
 "vpad.layouts.edit" = "Modifier les boutons (position, taille, opacité, couleur)";
@@ -223,6 +225,7 @@
 "vpad.layouts.stickFixed.note" = "Les sticks restent à l'écran ; placez-les dans Modifier les boutons. Désactivé = le stick se centre là où votre doigt se pose. Ce jeu uniquement.";
 "vpad.layouts.title" = "Disposition tactile";
 "vpad.layouts.touch.note" = "Pour les jeux avec leurs propres commandes tactiles. Les boutons à l'écran s'éteignent ; maintenez quatre doigts pendant 1,5 s pour revenir.";
+"vpad.layouts.gesture.note" = "Aucun bouton à l'écran : glisser pour les sticks, toucher les zones pour les boutons. Quatre doigts 1,5 s pour revenir.";
 "vpad.menu.editDisabled" = "Aucun bouton à modifier en mode tactile uniquement";
 "vpad.menu.face.auto" = "Boutons : Automatique";
 "vpad.menu.face.auto.note" = "Suit les lettres sur votre manette : disposition Switch sur les manettes Nintendo, disposition Xbox sur les manettes Xbox";
